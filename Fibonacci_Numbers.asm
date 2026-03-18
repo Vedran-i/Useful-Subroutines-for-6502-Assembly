@@ -1,3 +1,4 @@
+;--------------------------------------------
 ;This subroutine calculates Fibonacci numbers
 
 ; x = 0
@@ -8,6 +9,7 @@
 ; y = z
 ; return to loop 
 ; result: 1, 2, 3, 5, 8, 13, 21, 34, 55...
+;---------------------------------------------
 
 LDA #$00
 STA $01 ; x variable
@@ -35,6 +37,11 @@ ADC #$00
 STA $02 ;y
 
 JMP loop
+;----------------------------------------------------
 ; result is in the accumulator displayed in hexadecimal value:
 ; 01, 02, 03, 05, 08, 0D, 15, 22, 59, 144, 233
 
+;You can alternatively also insert the two lines before JMP:
+; TAX ;transfers accumulators value to X, so the value is clearly displayed in the X register.
+; TXA ;transfer it back to the accumulator
+;---------------------------------------------------
